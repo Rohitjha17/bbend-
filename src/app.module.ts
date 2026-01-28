@@ -20,6 +20,8 @@ import { BookingsModule } from './bookings/bookings.module';
       autoLoadEntities: true,
       synchronize: true, // OK for evaluation - DON'T use in production
       logging: process.env.NODE_ENV === 'development',
+      retryAttempts: 3,
+      retryDelay: 3000,
     }),
     AvailabilityModule,
     BookingsModule,
